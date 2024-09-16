@@ -12,3 +12,4 @@ Picture https://xtremethoughts.com/basic-information-about-3js/
 [6] https://www.youtube.com/watch?v=fNFkDc7WawQ
 [7] https://discourse.threejs.org/t/what-exactly-is-three-js-for/36588
 [8] https://discourse.threejs.org/t/what-is-three-js/13440
+[9] https://medium.com/@arashtad/three-js-and-babylon-js-which-is-the-best-choice-f79690b1707f
