@@ -28,6 +28,8 @@ Drei, React three fibre
 Pre condition: node, npm
 
 We need sample solutions to each practical tasks
+Ready made ThreeJS cheat sheet by [JS MASTERY](https://drive.google.com/file/d/13tjvQ4OdPxejfE6qqSdnL_rdoVWhKYM3/view)
+
 
 ## Workshop structure
 
@@ -38,10 +40,9 @@ We need sample solutions to each practical tasks
 ![ThreeJS Structure](images/ThreeJS_Structure.png)
 
 -	Demo portfolio/product website
--	Let them explore https://threejs.org demos
 -	Provide ThreeJS handout (cheat sheet)
 -	Practical task 1 – Basic shapes + lighting
 -	Practical task 2 - Animations 
 -	Practical task 3 – load model (blender)
 -	practical task 4 – load screen (optional)
-
+-	Let them explore https://threejs.org demos
