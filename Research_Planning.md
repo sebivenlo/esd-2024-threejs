@@ -31,17 +31,17 @@ We need sample solutions to each practical tasks
 
 ## Workshop structure
 
-•	Icebreaker / ask for prior experience
-•	Agenda
-•	Basic information  
+-	Icebreaker / ask for prior experience
+-	Agenda
+-	Basic information  
 
 ![ThreeJS Structure](images/ThreeJS_Structure.png)
 
-•	Demo portfolio/product website
-•	Let them explore https://threejs.org demos
-•	Provide ThreeJS handout (cheat sheet)
-•	Practical task 1 – Basic shapes + lighting
-•	Practical task 2 - Animations 
-•	Practical task 3 – load model (blender)
-•	practical task 4 – load screen (optional)
+-	Demo portfolio/product website
+-	Let them explore https://threejs.org demos
+-	Provide ThreeJS handout (cheat sheet)
+-	Practical task 1 – Basic shapes + lighting
+-	Practical task 2 - Animations 
+-	Practical task 3 – load model (blender)
+-	practical task 4 – load screen (optional)
 
