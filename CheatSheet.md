@@ -1,5 +1,7 @@
 # Cheat Sheet
 
+For more information see: https://threejs.org/docs/#manual/en/introduction/Installation
+
 | Action                                                                                                          | command |
 |--------------------------------------------------------------------------------------------------------------------|------|
 | Run vite localhost | npx vite     |
