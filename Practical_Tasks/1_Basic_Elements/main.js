@@ -1,25 +1,18 @@
+// Basic Elements
 import * as THREE from 'three';
 
-//Scene, camera and renderer are mandatory to render the scene with a camera
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+//TODO:
+// 1. Create Scene, Camera and Renderer
+// 2. Set renderer size to correct window size
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+// This line inserts the Three.JS object (Canvas) into the web pages HTML Body. renderer.domElement creates a <Canvas> 
 document.body.appendChild( renderer.domElement );
 
-//An object required a geometrical form, a material to color it and a mesh which is an object that takes a geometry and applies a material to it
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+// 3. Create a Box Geometry, MeshBasicMaterial 
+// 4. Use elements from 3. to create Mesh
+// 5. Add Mesh to Scene 
 
-camera.position.z = 5;
+camera.position.z = 4;
 
-//Rendering the scene
-function animate() {
-    cube.rotation.x += 0.01;
-cube.rotation.y += 0.01;
-	renderer.render( scene, camera );
-}
-renderer.setAnimationLoop( animate );
+
+// 6. Render scene and the camera with Renderer
