@@ -1,33 +1,29 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 //TODOS:
+//PART 1 - Object animation
 // 1. Copy/paste your own solution or use the sample solution
 
-//Scene, camera and renderer are mandatory to render the scene with a camera
-const scene = new THREE.Scene();
-scene.background = new THREE.Color("#ffffff")
+// 2. Declare a function animateCube()
 
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-camera.position.set(20,20,50)
-camera.lookAt(0,0,0)
+// 3. Animate the cube by changing (increasing) its x and y rotation 
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+// 4. Move the rendering of the scene and camera into the function
 
-// This line inserts the Three.JS object (Canvas) into the web pages HTML Body. renderer.domElement creates a <Canvas> 
-document.body.appendChild( renderer.domElement );
+// 5. Set renderer AnimationLoop to the function animateCube
 
-//An object required a geometrical form, a material to color it and a mesh which is an object that takes a geometry and applies a material to it
-const geometry = new THREE.BoxGeometry( 10, 10, 10 );
-const material = new THREE.MeshNormalMaterial();
-const cube = new THREE.Mesh( geometry, material );
+//PART 2 - Camera Animation
+// 6. Create new OrbitControls object below the animateCube function
 
-scene.add( cube );
+// 7. Set OrbitControls auto rotate to true and the speed to 1 or your own value; do controls.update()
 
-function animate() {
-    cube.rotation.x += 0.01;
-cube.rotation.y += 0.01;
-	renderer.render( scene, camera );
-}
-renderer.setAnimationLoop( animate );
-renderer.render( scene, camera );
+// 8. Declare a function animateCamera()
+
+// 9. Update controls and render with scene and camera (inside function)
+
+// 10. Change the name of an animate function inside the AnimationLoop to animateCamera
+
+
+
+renderer.setAnimationLoop( animateXYZ );
