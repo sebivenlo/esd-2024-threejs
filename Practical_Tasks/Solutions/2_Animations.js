@@ -1,8 +1,5 @@
 import * as THREE from 'three';
 
-//TODOS:
-// 1. Copy/paste your own solution or use the sample solution
-
 //Scene, camera and renderer are mandatory to render the scene with a camera
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#ffffff")
