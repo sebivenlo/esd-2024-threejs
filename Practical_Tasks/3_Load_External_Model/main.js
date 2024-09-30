@@ -1,25 +1,42 @@
-import * as THREE from 'three';
 
-//Scene, camera and renderer are mandatory to render the scene with a camera
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+import * as THREE from 'three'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+const scene = new THREE.Scene()
+scene.background = new THREE.Color("#ffffff")
 
-//An object required a geometrical form, a material to color it and a mesh which is an object that takes a geometry and applies a material to it
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+scene.add( light );
 
-camera.position.z = 5;
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
+camera.position.set(1.5, 0.75, 2)
 
-//Rendering the scene
+const renderer = new THREE.WebGLRenderer({ antialias: true })
+
+renderer.shadowMap.enabled = true
+renderer.setSize(window.innerWidth, window.innerHeight)
+document.body.appendChild(renderer.domElement)
+
+const controls = new OrbitControls(camera, renderer.domElement)
+controls.enableDamping = true
+
+
+new GLTFLoader().load('Model/shiba/scene.gltf', (gltf) => {
+  console.log(gltf)
+
+  scene.add(gltf.scene)
+
+})
+
+
 function animate() {
-    cube.rotation.x += 0.01;
-cube.rotation.y += 0.01;
-	renderer.render( scene, camera );
+  requestAnimationFrame(animate)
+
+  controls.update()
+
+  renderer.render(scene, camera)
+
 }
-renderer.setAnimationLoop( animate );
+
+animate()
