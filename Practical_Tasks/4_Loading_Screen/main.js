@@ -3,6 +3,38 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
+// An object to hold all the things needed for our loading screen
+var loadingScreen = {
+	scene: new THREE.Scene(),
+	camera: new THREE.PerspectiveCamera(90, 1280/720, 0.1, 100),
+	box: new THREE.Mesh(
+		new THREE.BoxGeometry(0.5,0.5,0.5),
+		new THREE.MeshBasicMaterial({ color:0x4444ff })
+	)
+};
+var loadingManager = null;
+var RESOURCES_LOADED = false;
+
+// Set up the loading screen's scene.
+	// It can be treated just like our main scene.
+	loadingScreen.box.position.set(0,0,5);
+	loadingScreen.camera.lookAt(loadingScreen.box.position);
+	loadingScreen.scene.add(loadingScreen.box);
+	
+	// Create a loading manager to set RESOURCES_LOADED when appropriate.
+	// Pass loadingManager to all resource loaders.
+	loadingManager = new THREE.LoadingManager();
+	
+	loadingManager.onProgress = function(item, loaded, total){
+		console.log(item, loaded, total);
+	};
+	
+	loadingManager.onLoad = function(){
+		console.log("loaded all resources");
+		RESOURCES_LOADED = true;
+	};
+
+
 const scene = new THREE.Scene()
 scene.background = new THREE.Color("#ffffff")
 
@@ -21,16 +53,26 @@ document.body.appendChild(renderer.domElement)
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true
 
-
-new GLTFLoader().load('Model/shiba/scene.gltf', (gltf) => {
+var loader = new GLTFLoader(loadingManager)
+loader.load('Model/shiba/scene.gltf', (gltf) => {
   console.log(gltf)
 
   scene.add(gltf.scene)
 
 })
 
-
 function animate() {
+  // This block runs while resources are loading.
+	if( RESOURCES_LOADED == false ){
+		requestAnimationFrame(animate);
+		
+		loadingScreen.box.position.x -= 0.05;
+		if( loadingScreen.box.position.x < -10 ) loadingScreen.box.position.x = 10;
+		loadingScreen.box.position.y = Math.sin(loadingScreen.box.position.x);
+		
+		renderer.render(loadingScreen.scene, loadingScreen.camera);
+		return; // Stop the function here.
+	}
   requestAnimationFrame(animate)
 
   controls.update()
