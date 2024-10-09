@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
-// An object to hold all the things needed for our loading screen
+// An object to hold all the things needed for the loading screen, you can experiment with it
 var loadingScreen = {
 	scene: new THREE.Scene(),
 	camera: new THREE.PerspectiveCamera(90, 1280/720, 0.1, 100),
@@ -12,61 +12,12 @@ var loadingScreen = {
 		new THREE.MeshBasicMaterial({ color:0x4444ff })
 	)
 };
-var loadingManager = new THREE.LoadingManager();
-var RESOURCES_LOADED = false;
 
-// Set up the loading screen's scene.
-	// It can be treated just like our main scene.
-	loadingScreen.box.position.set(0,0,5);
-	loadingScreen.camera.lookAt(loadingScreen.box.position);
-	loadingScreen.scene.add(loadingScreen.box);
-	
-	// Create a loading manager to set RESOURCES_LOADED when appropriate.
-	loadingManager.onLoad = function(){
-		RESOURCES_LOADED = true;
-	};
-
-
-const scene = new THREE.Scene()
-scene.background = new THREE.Color("#ffffff")
-
-const light = new THREE.AmbientLight( 0x404040 ); // soft white light
-scene.add( light );
-
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100)
-camera.position.set(1.5, 0.75, 2)
-
-const renderer = new THREE.WebGLRenderer({ antialias: true })
-
-renderer.shadowMap.enabled = true
-renderer.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(renderer.domElement)
-
-const controls = new OrbitControls(camera, renderer.domElement)
-controls.enableDamping = true
-
-var loader = new GLTFLoader(loadingManager)
-loader.load('Model/shiba/scene.gltf', (gltf) => {
-  console.log(gltf)
-
-  scene.add(gltf.scene)
-
-})
-
-function animate() {
-  // This block runs while resources are loading.
-	if( RESOURCES_LOADED == false ){
-		requestAnimationFrame(animate);
-		renderer.render(loadingScreen.scene, loadingScreen.camera);
-		return; // Stop the function here.
-	}
-  
-  requestAnimationFrame(animate)
-
-  controls.update()
-
-  renderer.render(scene, camera)
-
-}
-
-animate()
+//TODOS
+// 1 Create a Loading Manager 
+// 2 create a boolean resources_loaded and set it to false
+// 3 Set loadingScreen bcamera and scene and box position
+// 4 create function for loadingmanager onLoad that sets resources_loaded to true
+// 5 Copy/paste your own solution or use the sample solution for task 3
+// 6 Make sure to pass the loadingManager when using the GLTF Loader
+// 7 Inside the animate function, add an if statement thats true when the resources are not loaded. Request animation frame and render the loadingscreen scene and camera.
