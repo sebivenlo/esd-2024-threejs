@@ -36,6 +36,7 @@ Game: https://coastalworld.com/
 
 Three.js Babylon.js Comparison: https://medium.com/@arashtad/three-js-and-babylon-js-which-is-the-best-choice-f79690b1707f
 
+Loading screen example: https://github.com/saucecode/threejs-demos/blob/master/06_Loading/demo.js
 
 
 

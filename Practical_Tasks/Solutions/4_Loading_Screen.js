@@ -12,7 +12,7 @@ var loadingScreen = {
 		new THREE.MeshBasicMaterial({ color:0x4444ff })
 	)
 };
-var loadingManager = null;
+var loadingManager = new THREE.LoadingManager();
 var RESOURCES_LOADED = false;
 
 // Set up the loading screen's scene.
@@ -22,15 +22,7 @@ var RESOURCES_LOADED = false;
 	loadingScreen.scene.add(loadingScreen.box);
 	
 	// Create a loading manager to set RESOURCES_LOADED when appropriate.
-	// Pass loadingManager to all resource loaders.
-	loadingManager = new THREE.LoadingManager();
-	
-	loadingManager.onProgress = function(item, loaded, total){
-		console.log(item, loaded, total);
-	};
-	
 	loadingManager.onLoad = function(){
-		console.log("loaded all resources");
 		RESOURCES_LOADED = true;
 	};
 
@@ -65,14 +57,10 @@ function animate() {
   // This block runs while resources are loading.
 	if( RESOURCES_LOADED == false ){
 		requestAnimationFrame(animate);
-		
-		loadingScreen.box.position.x -= 0.05;
-		if( loadingScreen.box.position.x < -10 ) loadingScreen.box.position.x = 10;
-		loadingScreen.box.position.y = Math.sin(loadingScreen.box.position.x);
-		
 		renderer.render(loadingScreen.scene, loadingScreen.camera);
 		return; // Stop the function here.
 	}
+  
   requestAnimationFrame(animate)
 
   controls.update()
