@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 //Scene, camera and renderer are mandatory to render the scene with a camera
 const scene = new THREE.Scene();
@@ -20,5 +21,10 @@ const material = new THREE.MeshNormalMaterial();
 const cube = new THREE.Mesh( geometry, material );
 
 scene.add( cube );
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.autoRotate = true;
+controls.autoRotateSpeed = 1;
+controls.update();
 
 renderer.render( scene, camera );
