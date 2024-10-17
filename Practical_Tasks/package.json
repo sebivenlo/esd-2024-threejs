@@ -1,4 +1,10 @@
 {
+  "name": "ed-threejs",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
   "dependencies": {
     "three": "^0.168.0"
   },
