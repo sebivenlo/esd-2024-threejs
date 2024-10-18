@@ -1,0 +1,7 @@
+services:
+  threejs:
+    build: .
+    ports:
+      - "8083:8083"
+    volumes:
+      - ./Workshop:/app/Workshop
