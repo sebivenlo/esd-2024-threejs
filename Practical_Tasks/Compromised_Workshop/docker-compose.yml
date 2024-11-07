@@ -4,4 +4,5 @@ services:
     ports:
       - "8083:8083"
     volumes:
-      - ./Workshop:/app/Workshop
+      - .:/app
+    command: npx vite . --force --port 8083 --host 0.0.0.0
