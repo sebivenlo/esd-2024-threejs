@@ -4,7 +4,7 @@ WORKDIR /app/Workshop
 
 COPY package.json package-lock.json /app/
 
-RUN cd /app && npm install && npm install three
+RUN cd /app && npm install 
 
 #Port for Vite
 EXPOSE 8083
