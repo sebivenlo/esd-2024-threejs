@@ -19,7 +19,7 @@ Follow these steps:
 2. docker-compose up
 - Inside docker desktop, click on container "threejs" and open terminal for container
 - Do "npm install three"
-- Now start working on the tasks, the page will show changes on reload. No need to restart container.
+- Now start working on the tasks, the page will show changes when you restart the container. Just do ctr + c in terminal to stop. "docker compose up" to start.
 
 Results will show here:
 http://localhost:8083/
