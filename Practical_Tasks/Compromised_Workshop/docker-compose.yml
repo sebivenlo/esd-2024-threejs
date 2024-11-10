@@ -1,0 +1,8 @@
+services:
+  threejs:
+    build: .
+    ports:
+      - "8083:8083"
+    volumes:
+      - .:/app
+    command: npx vite . --force --port 8083 --host 0.0.0.0
