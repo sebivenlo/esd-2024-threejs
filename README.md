@@ -12,14 +12,15 @@ That includes:
 
 How to Start:
 Follow these steps: 
+- Clone repository and open it in VS Code
 - Have docker desktop open
-- Open terminal at Practical_Tasks\Compromised_Workshop\Workshop folder
+- Open terminal at Practical_Tasks\Compromised_Workshop folder
 - Do
 1. docker-compose build --no-cache                    
 2. docker-compose up
-- Inside docker desktop, click on container "threejs" and open terminal for container
-- Do "npm install three"
-- Now start working on the tasks, the page will show changes when you restart the container. Just do ctr + c in terminal to stop. "docker compose up" to start.
+
+- Now start working on the tasks, the page will show changes automatically when you cloned through github desktop. When you downloaded the zip, just save (ctrl + s) and they show.
+No need to restart the container.
 
 Results will show here:
-http://localhost:8083/
+http://localhost:5173/
