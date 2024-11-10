@@ -2,11 +2,11 @@
 Click link -> hold control + left mouse click
 For more information see: https://threejs.org/docs/#manual/en/introduction/Installation
 
-Three.js Creating a scene - https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
-Three.js Loading 3D model - https://threejs.org/docs/#manual/en/introduction/Loading-3D-models
-Three.js OrbitControls - https://threejs.org/docs/#examples/en/controls/OrbitControls
-MDN requestAnimationFrame - https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
-LoadingManager https://threejs.org/docs/#api/en/loaders/managers/LoadingManager
+- Three.js Creating a scene - https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
+- Three.js Loading 3D model - https://threejs.org/docs/#manual/en/introduction/Loading-3D-models
+- Three.js OrbitControls - https://threejs.org/docs/#examples/en/controls/OrbitControls
+- MDN requestAnimationFrame - https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+- LoadingManager https://threejs.org/docs/#api/en/loaders/managers/LoadingManager
 
 | Action                                                                                                          | command |
 |--------------------------------------------------------------------------------------------------------------------|------|
