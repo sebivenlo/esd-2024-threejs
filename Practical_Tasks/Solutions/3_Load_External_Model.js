@@ -19,7 +19,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 // This line inserts the Three.JS object (Canvas) into the web pages HTML Body. renderer.domElement creates a <Canvas> 
 document.body.appendChild( renderer.domElement );
 
-new GLTFLoader().load('Model/shiba/scene.gltf', (gltf) => {
+new GLTFLoader().load('src/Model/shiba/scene.gltf', (gltf) => {
     console.log(gltf)
   
     scene.add(gltf.scene)

@@ -46,7 +46,7 @@ const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true
 
 var loader = new GLTFLoader(loadingManager)
-loader.load('Model/shiba/scene.gltf', (gltf) => {
+loader.load('src/Model/shiba/scene.gltf', (gltf) => {
   console.log(gltf)
 
   scene.add(gltf.scene)
