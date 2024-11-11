@@ -10,16 +10,17 @@ That includes:
 - Docker (compose) file (if applicable)
 
 
-How to Start:
-Follow these steps: 
-- Clone repository and open it in VS Code
-- Have docker desktop open
-- Open terminal at Practical_Tasks\Compromised_Workshop folder
-- Do
-1. docker-compose build --no-cache                    
-2. docker-compose up
+# How to Start
 
-- Now start working on the tasks, the page will show changes automatically when you cloned through github desktop. When you downloaded the zip, just save (ctrl + s) and they show.
+1. Clone repository and open it in VS Code
+2. Have docker desktop open
+3. Open terminal at Practical_Tasks\Compromised_Workshop folder
+4. Run the following commands:
+   1. docker-compose build --no-cache
+   2. docker-compose up
+5. Start working on the tasks.
+
+The page will show changes automatically when you cloned through GitHub Desktop. When you downloaded the zip, just save (ctrl + s) and they show.
 No need to restart the container.
 
 Results will show here:
