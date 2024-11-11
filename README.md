@@ -14,7 +14,7 @@ That includes:
 
 1. Clone repository and open it in VS Code
 2. Have docker desktop open
-3. Open terminal at Practical_Tasks\Compromised_Workshop folder
+3. Open terminal at Practical_Tasks\Compromised_Workshop\src folder
 4. Run the following commands:
    1. docker-compose build --no-cache
    2. docker-compose up
